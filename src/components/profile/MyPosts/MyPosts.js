@@ -4,8 +4,11 @@ import s from './MyPosts.module.css'
 import Post from "./Post/Post";
 
 const MyPosts = () => {
+
+
+
     return (
-        <div className={s.content}>
+        <div>
 
             <div>
                 My posts
@@ -14,9 +17,9 @@ const MyPosts = () => {
                     <button>Add post</button>
                     <button>Remove</button>
                 </div>
-                <Post/>
-                <Post/>
-                <Post/>
+                <Post message='hello first post' likesCount='15'/>
+                <Post message='Hello, it`s a second post))' likesCount='25'/>
+
             </div>
 
         </div>
