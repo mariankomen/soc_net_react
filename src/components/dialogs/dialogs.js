@@ -4,8 +4,32 @@ import s from './dialogs.module.css'
 
 const Dialogs = () => {
     return(
-        <div >
-            <h1>Helo</h1>
+        <div className={s.dialogs}>
+            <div className={s.dialogsItems}>
+                <div className={s.dialog}>
+                    Sanya
+                </div>
+                <div className={s.dialog + ' ' + s.active}>
+                    Sanya
+                </div>
+                <div className={s.dialog}>
+                    Sanya
+                </div>
+                <div className={s.dialog}>
+                    Sanya
+                </div>
+                <div className={s.dialog}>
+                    Sanya
+                </div>
+                <div className={s.dialog}>
+                    Sanya
+                </div>
+            </div>
+            <div className={s.messages}>
+                <div className={s.message}>Hello</div>
+                <div className={s.message}>Let it be</div>
+                <div className={s.message}>Jumaaa</div>
+            </div>
         </div>
     )
 }
