@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
@@ -11,6 +11,11 @@
     grid-template-rows: 60px 1fr;
     grid-template-columns: 2fr 10fr;
     grid-gap: 1px;
+}
+
+.app-wrapper-content {
+    grid-area: c;
+    background-color: cornflowerblue;
 }
 
 
