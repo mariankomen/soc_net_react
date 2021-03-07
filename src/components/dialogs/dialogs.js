@@ -9,8 +9,8 @@ import s from './dialogs.module.css'
 const Dialogs = (props) => {
 
 
-    let dialogsElements = props.dialogs.map((item) => <DialogItem name={item.name} id={item.id}/>)
-    let messagesElements = props.messages.map(message => <Message message={message.message}/>)
+    let dialogsElements = props.state.dialogs.map((item) => <DialogItem name={item.name} id={item.id}/>)
+    let messagesElements = props.state.messages.map(message => <Message message={message.message}/>)
 
 
     return (
