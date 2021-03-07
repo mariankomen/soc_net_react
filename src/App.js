@@ -24,7 +24,7 @@ const App = () => {
                     <Route path='/music' component={Music}/>
                     <Route path='/settings' component={Settings}/>
                 </div>
-                {/*<Profile/>*/}
+                {/*<ProfileInfo/>*/}
             </div>
         </BrowserRouter>
     )

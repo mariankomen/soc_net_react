@@ -3,33 +3,40 @@ import React from 'react'
 import s from './dialogs.module.css'
 import {NavLink} from "react-router-dom";
 
+
+const DialogItem = (props) => {
+    let path = '/dialogs/' + props.id
+    return (
+        <div className={s.dialog + ' ' + s.active}>
+            <NavLink to={path}>{props.name}</NavLink>
+        </div>
+    )
+}
+const Message = (props) => {
+    return(
+        <div className={s.message}>{props.message}</div>
+    )
+}
+
+
 const Dialogs = () => {
     return(
         <div className={s.dialogs}>
             <div className={s.dialogsItems}>
-                <div className={s.dialog}>
-                    <NavLink to='/dialogs/1'>Sanya</NavLink>
-                </div>
-                <div className={s.dialog + ' ' + s.active}>
-                    <NavLink to='/dialogs/2'>Maria</NavLink>
-                </div>
-                <div className={s.dialog}>
-                    <NavLink to='/dialogs/3'>Kolia</NavLink>
-                </div>
-                <div className={s.dialog}>
-                    <NavLink to='/dialogs/4'>Marian</NavLink>
-                </div>
-                <div className={s.dialog}>
-                    <NavLink to='/dialogs/5'>Nastya</NavLink>
-                </div>
-                <div className={s.dialog}>
-                    <NavLink to='/dialogs/6'>Zjenia</NavLink>
-                </div>
+                <DialogItem name='Sanya' id='1'/>
+                <DialogItem name='Masha' id='2'/>
+                <DialogItem name='Vanya' id='3'/>
+                <DialogItem name='Marian' id='4'/>
+                <DialogItem name='Kolia' id='5'/>
+                <DialogItem name='Nastya' id='6'/>
+
+
             </div>
             <div className={s.messages}>
-                <div className={s.message}>Hello</div>
-                <div className={s.message}>Let it be</div>
-                <div className={s.message}>Jumaaa</div>
+                <Message message='Hello vasia'/>
+                <Message message='Marian ebas'/>
+                <Message message='React.js is zbs'/>
+
             </div>
         </div>
     )
