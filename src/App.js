@@ -9,6 +9,7 @@ import {Route, BrowserRouter} from 'react-router-dom'
 import News from "./components/news/news";
 import Music from "./components/music/music";
 import Settings from "./components/settings/settings";
+import DialogsContainer from "./components/dialogs/DialogsContainer";
 
 
 const App = (props) => {
@@ -21,13 +22,10 @@ const App = (props) => {
                 <div className='app-wrapper-content'>
 
                     <Route path='/profile'
-                           render={()=> <Profile profilePage={props.state.profilePage}
-                                                 dispatch={props.dispatch}
-
+                           render={()=> <Profile store={props.store}
                            />}/>
                     <Route path='/dialogs'
-                           render={()=> <Dialogs store={props.store}
-
+                           render={()=> <DialogsContainer store={props.store}
                     />}/>
                     <Route path='/news' render={()=> <News/>}/>
                     <Route path='/music' render={()=> <Music/>}/>
