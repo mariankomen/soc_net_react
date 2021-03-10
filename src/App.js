@@ -15,18 +15,17 @@ import DialogsContainer from "./components/dialogs/DialogsContainer";
 const App = (props) => {
 
     return (
-        <BrowserRouter>
             <div className='app-wrapper'>
                 <Header/>
                 <Navbar/>
                 <div className='app-wrapper-content'>
 
                     <Route path='/profile'
-                           render={()=> <Profile store={props.store}
-                           />}/>
+                           render={()=> <Profile />}/>
+
                     <Route path='/dialogs'
-                           render={()=> <DialogsContainer store={props.store}
-                    />}/>
+                           render={()=> <DialogsContainer />}/>
+
                     <Route path='/news' render={()=> <News/>}/>
                     <Route path='/music' render={()=> <Music/>}/>
                     <Route path='/settings' render={()=> <Settings/>}/>
@@ -34,7 +33,6 @@ const App = (props) => {
                 </div>
                 {/*<ProfileInfo/>*/}
             </div>
-        </BrowserRouter>
     )
 }
 
