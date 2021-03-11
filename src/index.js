@@ -25,3 +25,5 @@ store.subscribe(() => {
     rerenderEntireTree(state)
 })
 
+//les 46. deep copy vs shallow copy
+
