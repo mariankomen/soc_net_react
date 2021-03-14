@@ -4,25 +4,24 @@ import styles from './users.module.css'
 import * as axios from "axios";
 import userPhoto from '../../assets/images/user.png'
 
-const Users = (props) => {
+export default class Users extends React.Component {
 
-    let getUsers = () => {
-        if (props.users.length === 0) {
-            axios
-                .get('https://social-network.samuraijs.com/api/1.0/users')
-                .then(res => {
-                    props.setUsers(res.data.items)
-                })
-        }
+    constructor(props) {
+        super(props);
+
+        axios
+            .get('https://social-network.samuraijs.com/api/1.0/users')
+            .then(res => {
+                this.props.setUsers(res.data.items)
+            })
     }
 
 
-    return (
-        <div>
-            <button
-                onClick={getUsers}
-            >Get users</button>
-            {props.users.map((u) => <div key={u.id}>
+    render() {
+        return (
+            <div>
+
+                {this.props.users.map((u) => <div key={u.id}>
                 <span>
                     <div>
                         <img src={u.photos.small != null ? u.photos.small : userPhoto} className={styles.photo}/>
@@ -30,14 +29,14 @@ const Users = (props) => {
                     <div>
                         {u.followed
                             ? <button onClick={() => {
-                                props.unfollow(u.id)
+                                this.props.unfollow(u.id)
                             }}>Unfollow</button>
                             : <button onClick={() => {
-                                props.follow(u.id)
+                                this.props.follow(u.id)
                             }}>Follow</button>}
                     </div>
                 </span>
-                <span>
+                    <span>
                     <span>
                         <div>{u.name}</div>
                         <div>{u.status}</div>
@@ -48,9 +47,8 @@ const Users = (props) => {
                     </span>
                 </span>
 
-            </div>)}
-        </div>
-    )
+                </div>)}
+            </div>
+        )
+    }
 }
-
-export default Users
